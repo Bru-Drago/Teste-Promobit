@@ -10,13 +10,13 @@ import Foundation
 
 struct ContactData : Decodable {
     
-    var userID       : Int?
-    var userName     : String?
-    var userLastname : String?
-    var userCompany  : String?
-    var userEmail    : String?
-    var userNovo     : Bool?
-    var userPhoto    : String?
+    var userID       : Int
+    var userName     : String
+    var userLastname : String
+    var userCompany  : String
+    var userEmail    : String
+    var userNovo     : Bool
+    var userPhoto    : String
     
     enum CodingKeys : String ,CodingKey {
         case userID       = "user_id"

@@ -9,7 +9,11 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var contactTableView: UITableView!
+    
+    @IBOutlet weak var addButton: UIButton!
+    
     var contacts : [ContactData] = []
     
     override func viewDidLoad() {
@@ -17,6 +21,9 @@ class ViewController: UIViewController {
         
         callGetContacts()
 
+    }
+    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
     }
     
     func callGetContacts(){
