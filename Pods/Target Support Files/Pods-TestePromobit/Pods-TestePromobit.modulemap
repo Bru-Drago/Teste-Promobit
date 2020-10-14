@@ -1,0 +1,6 @@
+framework module Pods_TestePromobit {
+  umbrella header "Pods-TestePromobit-umbrella.h"
+
+  export *
+  module * { export * }
+}
