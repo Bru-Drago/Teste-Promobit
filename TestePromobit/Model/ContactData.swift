@@ -7,17 +7,18 @@
 
 import Foundation
 
-struct ContactData {
+
+struct ContactData : Decodable {
     
-    var userId       : Int
-    var userName     : String
-    var userLastname : String
-    var userCompany  : String
-    var userEmail    : String
-    var userNovo     : Bool
-    var userPhoto    : String
+    var userID       : Int?
+    var userName     : String?
+    var userLastname : String?
+    var userCompany  : String?
+    var userEmail    : String?
+    var userNovo     : Bool?
+    var userPhoto    : String?
     
-    enum CodingKeys : String,CodingKey {
+    enum CodingKeys : String ,CodingKey {
         case userID       = "user_id"
         case userName     = "user_name"
         case userLastname = "user_lastname"
