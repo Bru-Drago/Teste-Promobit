@@ -8,10 +8,9 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ContactVC: UIViewController {
     
     @IBOutlet weak var contactTableView: UITableView!
-    
     @IBOutlet weak var addButton: UIButton!
     
     var contacts : [ContactData] = []
