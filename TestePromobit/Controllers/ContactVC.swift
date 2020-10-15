@@ -27,7 +27,12 @@ class ContactVC : UIViewController {
         contactTableView.dataSource = self
         
         contactTableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        makeButtonRound()
 
+    }
+    func makeButtonRound(){
+        addButton.layer.cornerRadius = addButton.frame.size.width / 2
+        addButton.layer.masksToBounds = true
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
