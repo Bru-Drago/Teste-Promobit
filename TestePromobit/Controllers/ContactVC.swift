@@ -32,7 +32,12 @@ class ContactVC : UIViewController {
         makeButtonRound()
 
     }
-   
+    //Alterando o texto do back button
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = " "
+        navigationItem.backBarButtonItem = backItem
+    }
     func makeButtonRound(){
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
         addButton.layer.masksToBounds = true
