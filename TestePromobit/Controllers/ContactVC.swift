@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class ContactVC : UIViewController {
     
@@ -14,6 +15,8 @@ class ContactVC : UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var contacts : [ContactData] = []
+    let placeholder = UIImage(named: "avatar")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,11 @@ extension ContactVC : UITableViewDataSource , UITableViewDelegate {
         let name = contacts[indexPath.row].userName
         let lastname = contacts[indexPath.row].userLastname
         cell.nameLbl.text = "\(name)" + " " + "\(lastname)"
+        let responseURL = contacts[indexPath.row].userPhoto
+        let imageURL = URL(string: responseURL)
+      
+        cell.userPhoto.sd_setImage(with: imageURL, placeholderImage: placeholder)
+        
         return cell
     }
     
