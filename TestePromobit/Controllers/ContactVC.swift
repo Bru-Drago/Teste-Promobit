@@ -21,6 +21,8 @@ class ContactVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         callGetContacts()
         
         contactTableView.delegate = self
@@ -30,6 +32,7 @@ class ContactVC : UIViewController {
         makeButtonRound()
 
     }
+   
     func makeButtonRound(){
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
         addButton.layer.masksToBounds = true
