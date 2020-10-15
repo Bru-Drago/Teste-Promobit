@@ -22,6 +22,8 @@
 		F5136BFF2537872400CA6168 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5136BFE2537872400CA6168 /* ContactData.swift */; };
 		F5136C192537BD3400CA6168 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5136C172537BD3400CA6168 /* ContactCell.swift */; };
 		F5136C1A2537BD3400CA6168 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5136C182537BD3400CA6168 /* ContactCell.xib */; };
+		F5136C1F2538733700CA6168 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5136C1E2538733600CA6168 /* Constants.swift */; };
+		F5304DB625388C5400CB1231 /* MyContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5304DB525388C5400CB1231 /* MyContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		F5136BFE2537872400CA6168 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
 		F5136C172537BD3400CA6168 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		F5136C182537BD3400CA6168 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		F5136C1E2538733600CA6168 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5304DB525388C5400CB1231 /* MyContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 				F5136BC325376CE600CA6168 /* Controllers */,
 				F5136BC225376CDD00CA6168 /* View */,
 				F5136B9D25376BEA00CA6168 /* Info.plist */,
+				F5136C1E2538733600CA6168 /* Constants.swift */,
 			);
 			path = TestePromobit;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				F5136B9525376BDF00CA6168 /* Main.storyboard */,
 				F5136C172537BD3400CA6168 /* ContactCell.swift */,
 				F5136C182537BD3400CA6168 /* ContactCell.xib */,
+				F5304DB525388C5400CB1231 /* MyContactCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,10 +465,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5304DB625388C5400CB1231 /* MyContactCell.swift in Sources */,
 				F5136C192537BD3400CA6168 /* ContactCell.swift in Sources */,
 				F5136B9425376BDF00CA6168 /* ContactVC.swift in Sources */,
 				F5136B9025376BDF00CA6168 /* AppDelegate.swift in Sources */,
 				F5136B9225376BDF00CA6168 /* SceneDelegate.swift in Sources */,
+				F5136C1F2538733700CA6168 /* Constants.swift in Sources */,
 				F5136BF62537810C00CA6168 /* ServiceManager.swift in Sources */,
 				F5136BFF2537872400CA6168 /* ContactData.swift in Sources */,
 			);

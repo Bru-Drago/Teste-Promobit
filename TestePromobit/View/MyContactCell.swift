@@ -1,20 +1,23 @@
 //
-//  ContactCell.swift
+//  MyContactCell.swift
 //  TestePromobit
 //
-//  Created by Bruna Fernanda Drago on 14/10/20.
+//  Created by Bruna Fernanda Drago on 15/10/20.
 //
 
 import UIKit
 
-class ContactCell: UITableViewCell {
+class MyContactCell: UITableViewCell {
 
-    @IBOutlet weak var userPhoto: UIImageView!
-    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var cImg: UIImageView!
+    
+    @IBOutlet weak var fullNameLbl: UILabel!
+    
     @IBOutlet weak var companyLbl: UILabel!
-    @IBOutlet weak var isNewBtn: UIButton!
     
     @IBOutlet weak var isNewImg: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +28,5 @@ class ContactCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

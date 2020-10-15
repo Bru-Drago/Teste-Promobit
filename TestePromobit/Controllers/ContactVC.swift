@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ContactVC: UIViewController {
+class ContactVC : UIViewController {
     
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
@@ -19,6 +19,11 @@ class ContactVC: UIViewController {
         super.viewDidLoad()
         
         callGetContacts()
+        
+        contactTableView.delegate = self
+        contactTableView.dataSource = self
+        
+        contactTableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
 
     }
     
@@ -33,10 +38,29 @@ class ContactVC: UIViewController {
             }
             self.contacts = contacts
             print(contacts)
-            //implementar aqui o reload data
+            DispatchQueue.main.async {
+                self.contactTableView.reloadData()
+            }
         }
     }
 
 
 }
-
+extension ContactVC : UITableViewDataSource , UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = contactTableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! ContactCell
+        cell.companyLbl.text = contacts[indexPath.row].userCompany
+        let name = contacts[indexPath.row].userName
+        let lastname = contacts[indexPath.row].userLastname
+        cell.nameLbl.text = "\(name)" + " " + "\(lastname)"
+        return cell
+    }
+    
+    
+}
+//"\(name)" + " " + "\(lastname)"
