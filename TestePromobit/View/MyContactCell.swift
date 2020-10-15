@@ -15,7 +15,7 @@ class MyContactCell: UITableViewCell {
     
     @IBOutlet weak var companyLbl: UILabel!
     
-    @IBOutlet weak var isNewImg: UIImageView!
+  
     
     
     override func awakeFromNib() {

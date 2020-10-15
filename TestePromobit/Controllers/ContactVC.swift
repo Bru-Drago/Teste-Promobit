@@ -70,11 +70,13 @@ extension ContactVC : UITableViewDataSource , UITableViewDelegate {
         let imageURL = URL(string: responseURL)
       
         cell.userPhoto.sd_setImage(with: imageURL, placeholderImage: placeholder)
-        var isNew = contacts[indexPath.row].userNovo
+        let isNew = contacts[indexPath.row].userNovo
         if isNew == false{
-            cell.isNewImg.isHidden = true
+           // cell.isNewImg.isHidden = true
+            cell.isNewView.isHidden = true
         }else {
-            cell.isNewImg.isHidden = false
+           // cell.isNewImg.isHidden = false
+            cell.isNewView.isHidden = false
         }
         
         return cell
