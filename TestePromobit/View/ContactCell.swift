@@ -14,6 +14,8 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var companyLbl: UILabel!
     @IBOutlet weak var isNewImg: UIImageView!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,4 +32,6 @@ class ContactCell: UITableViewCell {
         userPhoto.layer.masksToBounds = true
     }
 
-}
+    }
+
+
