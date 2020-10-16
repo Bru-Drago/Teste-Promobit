@@ -25,6 +25,7 @@
 		F5136C1F2538733700CA6168 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5136C1E2538733600CA6168 /* Constants.swift */; };
 		F5304DB625388C5400CB1231 /* MyContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5304DB525388C5400CB1231 /* MyContactCell.swift */; };
 		F55D83C32538DEFA00228D47 /* AddContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D83C22538DEF900228D47 /* AddContactVC.swift */; };
+		F55D83C825390BA600228D47 /* SucessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D83C725390BA600228D47 /* SucessVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F5136C1E2538733600CA6168 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5304DB525388C5400CB1231 /* MyContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactCell.swift; sourceTree = "<group>"; };
 		F55D83C22538DEF900228D47 /* AddContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactVC.swift; sourceTree = "<group>"; };
+		F55D83C725390BA600228D47 /* SucessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucessVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				F5136B9325376BDF00CA6168 /* ContactVC.swift */,
 				F55D83C22538DEF900228D47 /* AddContactVC.swift */,
+				F55D83C725390BA600228D47 /* SucessVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			files = (
 				F5304DB625388C5400CB1231 /* MyContactCell.swift in Sources */,
 				F55D83C32538DEFA00228D47 /* AddContactVC.swift in Sources */,
+				F55D83C825390BA600228D47 /* SucessVC.swift in Sources */,
 				F5136C192537BD3400CA6168 /* ContactCell.swift in Sources */,
 				F5136B9425376BDF00CA6168 /* ContactVC.swift in Sources */,
 				F5136B9025376BDF00CA6168 /* AppDelegate.swift in Sources */,

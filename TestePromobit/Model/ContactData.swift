@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct ContactData : Decodable {
+struct ContactData : Codable {
     
     var userID       : Int
     var userName     : String
