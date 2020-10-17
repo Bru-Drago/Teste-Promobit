@@ -44,6 +44,7 @@ class ContactVC : UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        
     }
     
     func callGetContacts(){

@@ -24,13 +24,38 @@ class AddContactVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
     
+    let parameters = [
+        "name": "Bruna",
+        "company": "XYZ",
+        "email": "teste@teste.com",
+        "phone" : "12345678",
+        "website" : "www.site.com",
+        "custom_note" : "isso é um teste"
+    
+    ]
+    let vc = SucessVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         configureBtnLayout()
         callConfigureTxtFieldLayout()
+        hideAllLabels()
+       
         
+        
+    }
+    func hideAllLabels(){
+        hideLabelAlpha(nameErroLbl)
+        hideLabelAlpha(companyErroLbl)
+        hideLabelAlpha(emailErroLbl)
+        hideLabelAlpha(phoneErroLbl)
+        hideLabelAlpha(siteErroLbl)
+        hideLabelAlpha(noteErroLbl)
+    }
+    func hideLabelAlpha(_ label: UILabel){
+        label.alpha = 0
         
     }
     func callConfigureTxtFieldLayout(){
@@ -58,6 +83,17 @@ class AddContactVC: UIViewController {
         saveBtn.layer.cornerRadius = 5
         saveBtn.layer.masksToBounds = true
     }
+    func doSendPost(){
+        ServiceManager.shared.sendPostRequest(parameters) { (error) in
+            if let error = error {
+                print("erro no sendPost \(error)")
+                return
+            }
+            
+        }
+        self.present(vc, animated: true)
+        print("dados inseridos com sucesso")
+    }
     
 
     @IBAction func cancelBtnTapped(_ sender: UIButton) {
@@ -65,5 +101,6 @@ class AddContactVC: UIViewController {
     
 
     @IBAction func saveBtnTapped(_ sender: UIButton) {
+        doSendPost()
     }
 }

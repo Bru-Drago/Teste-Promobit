@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SucessVC: UIViewController {
+class SucessVC : UIViewController {
     
     
     @IBOutlet weak var checkImg: UIImageView!
