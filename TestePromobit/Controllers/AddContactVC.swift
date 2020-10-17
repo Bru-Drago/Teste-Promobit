@@ -183,16 +183,17 @@ class AddContactVC: UIViewController {
     
 
 @IBAction func cancelBtnTapped(_ sender: UIButton) {
+    cleanData()
+    navigationController?.popToRootViewController(animated: true)
 }
 
 
 @IBAction func saveBtnTapped(_ sender: UIButton) {
     
-    
     if validateTextfields() {
         doSendPost()
         cleanData()
-        hideAllLabels()
+        
         
     }
 
