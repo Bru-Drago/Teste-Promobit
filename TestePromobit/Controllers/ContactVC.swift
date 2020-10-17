@@ -32,12 +32,18 @@ class ContactVC : UIViewController {
         makeButtonRound()
 
     }
-    //Alterando o texto do back button
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = " "
-        navigationItem.backBarButtonItem = backItem
+     let backItem = UIBarButtonItem()
+     backItem.title = " "
+     navigationItem.backBarButtonItem = backItem
+        
+        if segue.identifier == "goToAdd"{
+            let vc = (segue.destination as? AddContactVC)
+            vc?.list = contacts
+            
+        }
     }
+
     func makeButtonRound(){
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
         addButton.layer.masksToBounds = true
@@ -45,7 +51,11 @@ class ContactVC : UIViewController {
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
         
+        
     }
+    //Alterando o texto do back button
+
+
     
     func callGetContacts(){
         ServiceManager.shared.getContacts { (contacts, errorMsg) in
