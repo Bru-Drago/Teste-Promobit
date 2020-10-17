@@ -172,6 +172,14 @@ class AddContactVC: UIViewController {
         
     }
    
+    func cleanData(){
+        nameTxt.text    = ""
+        companyTxt.text = ""
+        emailTxt.text   = ""
+        phoneTxt.text   = ""
+        siteTxt.text    = ""
+        noteTxt.text    = ""
+    }
     
 
 @IBAction func cancelBtnTapped(_ sender: UIButton) {
@@ -179,9 +187,12 @@ class AddContactVC: UIViewController {
 
 
 @IBAction func saveBtnTapped(_ sender: UIButton) {
+    
+    
     if validateTextfields() {
         doSendPost()
-        
+        cleanData()
+        hideAllLabels()
         
     }
 

@@ -27,6 +27,10 @@ class SucessVC : UIViewController {
 
     @IBAction func returnBtnTapped(_ sender: UIButton) {
         
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+
+       
+        
     }
     
 }
