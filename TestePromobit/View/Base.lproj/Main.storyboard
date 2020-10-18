@@ -17,29 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-ox-2y8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UUX-s5-lB1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="679"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="679" id="7Fd-Zp-MyD"/>
-                                        </constraints>
-                                        <view key="tableFooterView" contentMode="scaleToFill" id="wsE-Yl-blB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                        </view>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlU-Ft-imI">
-                                        <rect key="frame" x="0.0" y="679" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="669" width="414" height="105"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWQ-C3-YKh">
-                                                <rect key="frame" x="304" y="19" width="80" height="80"/>
+                                                <rect key="frame" x="304" y="10" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.1063201055" green="0.3384730816" blue="0.46729272599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="N39-8r-lfI"/>
-                                                    <constraint firstAttribute="width" constant="80" id="mdw-Xw-Axd"/>
+                                                    <constraint firstAttribute="width" constant="80" id="NFy-Cx-5dj"/>
+                                                    <constraint firstAttribute="height" constant="80" id="xF4-hy-zSQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,29 +42,37 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="qWQ-C3-YKh" secondAttribute="trailing" constant="30" id="Unk-K7-OoO"/>
-                                            <constraint firstAttribute="bottom" secondItem="qWQ-C3-YKh" secondAttribute="bottom" constant="30" id="Xe3-A3-sc3"/>
+                                            <constraint firstAttribute="trailing" secondItem="qWQ-C3-YKh" secondAttribute="trailing" constant="30" id="DFy-dq-qXS"/>
+                                            <constraint firstAttribute="trailing" secondItem="qWQ-C3-YKh" secondAttribute="trailing" constant="30" id="G29-Bg-XaM"/>
+                                            <constraint firstItem="qWQ-C3-YKh" firstAttribute="top" secondItem="TlU-Ft-imI" secondAttribute="top" constant="10" id="PCg-ew-mTy"/>
+                                            <constraint firstItem="qWQ-C3-YKh" firstAttribute="top" secondItem="TlU-Ft-imI" secondAttribute="top" constant="10" id="q5g-0l-PBI"/>
+                                            <constraint firstAttribute="height" constant="105" id="sGK-aI-LQU"/>
                                         </constraints>
+                                        <variation key="heightClass=regular-widthClass=compact" preservesSuperviewLayoutMargins="NO"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="UUX-s5-lB1" firstAttribute="leading" secondItem="8hY-ox-2y8" secondAttribute="leading" id="I7a-hQ-6VD"/>
-                                    <constraint firstItem="UUX-s5-lB1" firstAttribute="top" secondItem="8hY-ox-2y8" secondAttribute="top" id="SE7-L4-nu4"/>
-                                    <constraint firstItem="TlU-Ft-imI" firstAttribute="top" secondItem="UUX-s5-lB1" secondAttribute="bottom" id="iEM-vg-95r"/>
-                                    <constraint firstAttribute="trailing" secondItem="UUX-s5-lB1" secondAttribute="trailing" id="upS-p1-rQw"/>
+                                    <constraint firstItem="UUX-s5-lB1" firstAttribute="top" secondItem="8hY-ox-2y8" secondAttribute="top" id="7XJ-2n-wyU"/>
+                                    <constraint firstItem="TlU-Ft-imI" firstAttribute="top" secondItem="UUX-s5-lB1" secondAttribute="bottom" id="9Zu-JR-M4Y"/>
+                                    <constraint firstItem="TlU-Ft-imI" firstAttribute="leading" secondItem="8hY-ox-2y8" secondAttribute="leading" id="BH4-T5-8uh"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUX-s5-lB1" secondAttribute="trailing" id="Dc1-UZ-pGk"/>
+                                    <constraint firstItem="TlU-Ft-imI" firstAttribute="top" secondItem="UUX-s5-lB1" secondAttribute="bottom" id="FKF-Ut-Kth"/>
+                                    <constraint firstItem="UUX-s5-lB1" firstAttribute="leading" secondItem="8hY-ox-2y8" secondAttribute="leading" id="GJP-dB-v1e"/>
+                                    <constraint firstAttribute="bottom" secondItem="TlU-Ft-imI" secondAttribute="bottom" id="rfm-Tw-okz"/>
+                                    <constraint firstAttribute="trailing" secondItem="TlU-Ft-imI" secondAttribute="trailing" id="sxi-6b-wpz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8hY-ox-2y8" secondAttribute="bottom" id="QOQ-oa-6pk"/>
-                            <constraint firstItem="8hY-ox-2y8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UW7-kN-Jgb"/>
-                            <constraint firstItem="8hY-ox-2y8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wtv-rd-C4F"/>
-                            <constraint firstItem="8hY-ox-2y8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nWN-Sm-17c"/>
+                            <constraint firstItem="8hY-ox-2y8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3MZ-MY-GpQ"/>
+                            <constraint firstItem="8hY-ox-2y8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cQS-Q9-XYX"/>
+                            <constraint firstItem="8hY-ox-2y8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s7y-NJ-6Pm"/>
+                            <constraint firstItem="8hY-ox-2y8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xGh-C0-i59"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meus Contatos" largeTitleDisplayMode="always" id="Qsq-Bu-AXL"/>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="49.553571428571423"/>
+            <point key="canvasLocation" x="927.536231884058" y="47.282608695652179"/>
         </scene>
         <!--Adicionar contato-->
         <scene sceneID="R23-g7-4sW">

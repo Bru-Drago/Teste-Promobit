@@ -11,6 +11,9 @@ import SDWebImage
 
 class ContactVC : UIViewController {
     
+    @IBOutlet weak var viewPlaceholder: UIView!
+    @IBOutlet weak var imgPlaceholder: UIImageView!
+    @IBOutlet weak var msgPlaceholder: UILabel!
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
@@ -21,7 +24,7 @@ class ContactVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //viewPlaceholder.isHidden = true
         
         callGetContacts()
         
@@ -53,14 +56,12 @@ class ContactVC : UIViewController {
         
         
     }
-    //Alterando o texto do back button
-
-
     
     func callGetContacts(){
         ServiceManager.shared.getContacts { (contacts, errorMsg) in
             guard let contacts = contacts else {
                 print("erro na call")
+               // self.viewPlaceholder.isHidden = false
                 return
             }
             self.contacts = contacts
