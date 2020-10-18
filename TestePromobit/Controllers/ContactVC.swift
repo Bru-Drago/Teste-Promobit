@@ -44,6 +44,9 @@ class ContactVC : UIViewController {
             let vc = (segue.destination as? AddContactVC)
             vc?.list = contacts
             
+        } else if segue.identifier == "goToFilter" {
+            let vc = (segue.destination as? FilterVC)
+            vc?.filterInfo = contacts
         }
     }
 
@@ -92,10 +95,10 @@ extension ContactVC : UITableViewDataSource , UITableViewDelegate {
         cell.userPhoto.sd_setImage(with: imageURL, placeholderImage: placeholder)
         let isNew = contacts[indexPath.row].userNovo
         if isNew == false{
-           // cell.isNewImg.isHidden = true
+           
             cell.isNewView.isHidden = true
         }else {
-           // cell.isNewImg.isHidden = false
+           
             cell.isNewView.isHidden = false
         }
         
