@@ -41,6 +41,29 @@
                                                     <segue destination="f6x-ck-0wf" kind="show" identifier="goToAdd" id="263-Ub-TmY"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" id="Jkb-6U-W5J">
+                                                <rect key="frame" x="0.0" y="-665" width="414" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" id="HxQ-fv-n86">
+                                                        <rect key="frame" x="118" y="86" width="176" height="135"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desculpe!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJr-0W-eWG">
+                                                        <rect key="frame" x="30" y="323" width="354" height="271"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="FJr-0W-eWG" secondAttribute="trailing" constant="30" id="0BX-sn-Ww5"/>
+                                                    <constraint firstItem="FJr-0W-eWG" firstAttribute="top" secondItem="HxQ-fv-n86" secondAttribute="bottom" constant="102" id="EFI-MY-3l3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FJr-0W-eWG" secondAttribute="bottom" constant="73" id="eS5-6L-mcA"/>
+                                                    <constraint firstItem="FJr-0W-eWG" firstAttribute="leading" secondItem="Jkb-6U-W5J" secondAttribute="leading" constant="30" id="kNV-wT-cAz"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -85,6 +108,9 @@
                     <connections>
                         <outlet property="addButton" destination="qWQ-C3-YKh" id="pod-CO-fAU"/>
                         <outlet property="contactTableView" destination="UUX-s5-lB1" id="Idk-dd-KA1"/>
+                        <outlet property="imgPlaceholder" destination="HxQ-fv-n86" id="PRq-Zi-L8g"/>
+                        <outlet property="msgPlaceholder" destination="FJr-0W-eWG" id="2x3-WU-aaa"/>
+                        <outlet property="viewPlaceholder" destination="Jkb-6U-W5J" id="eub-KT-310"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -424,6 +450,7 @@
     <resources>
         <image name="check_circle_outline_24_px" width="72" height="72"/>
         <image name="filter_list_1_24_px" width="36" height="36"/>
+        <image name="sad" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

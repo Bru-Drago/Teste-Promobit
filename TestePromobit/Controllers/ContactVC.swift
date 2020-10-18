@@ -24,7 +24,7 @@ class ContactVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //viewPlaceholder.isHidden = true
+        viewPlaceholder.isHidden = true
         
         callGetContacts()
         
@@ -64,7 +64,7 @@ class ContactVC : UIViewController {
         ServiceManager.shared.getContacts { (contacts, errorMsg) in
             guard let contacts = contacts else {
                 print("erro na call")
-               // self.viewPlaceholder.isHidden = false
+               self.viewPlaceholder.isHidden = false
                 return
             }
             self.contacts = contacts
