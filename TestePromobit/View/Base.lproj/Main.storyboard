@@ -75,7 +75,13 @@
                             <constraint firstItem="8hY-ox-2y8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xGh-C0-i59"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Meus Contatos" largeTitleDisplayMode="always" id="Qsq-Bu-AXL"/>
+                    <navigationItem key="navigationItem" title="Meus Contatos" largeTitleDisplayMode="always" id="Qsq-Bu-AXL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7F8-KV-tJb">
+                            <connections>
+                                <segue destination="irC-TB-yRD" kind="show" id="yk0-rB-lFN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="qWQ-C3-YKh" id="pod-CO-fAU"/>
                         <outlet property="contactTableView" destination="UUX-s5-lB1" id="Idk-dd-KA1"/>
@@ -83,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.536231884058" y="47.282608695652179"/>
+            <point key="canvasLocation" x="927.536231884058" y="46.875"/>
         </scene>
         <!--Adicionar contato-->
         <scene sceneID="R23-g7-4sW">
@@ -324,6 +330,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZm-DJ-p6w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2324.6376811594205" y="49.553571428571423"/>
+        </scene>
+        <!--FilterVC-->
+        <scene sceneID="hgm-4W-egK">
+            <objects>
+                <viewController id="irC-TB-yRD" customClass="FilterVC" customModule="TestePromobit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKY-FO-C9V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aPt-PJ-GBQ">
+                                <rect key="frame" x="39" y="158" width="131" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hgx-xH-MgW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="czC-pA-rHf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMi-3G-XGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="724"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9io-VU-ByA">
