@@ -40,19 +40,18 @@ class ContactVC : UIViewController {
      backItem.title = " "
      navigationItem.backBarButtonItem = backItem
         
-        if segue.identifier == "goToAdd"{
+        //"goToAdd"
+        if segue.identifier == K.Segues.segueAdd  {
             let vc = (segue.destination as? AddContactVC)
             vc?.list = contacts
             
-        } else if segue.identifier == "goToFilter" {
+            //"goToFilter"
+        } else if segue.identifier == K.Segues.segueFilter {
             let vc = (segue.destination as? FilterVC)
             vc?.filterInfo = contacts
         }
     }
-    
-    func showPlaceholder(_ view: UIView , _ label: UILabel){
-        
-    }
+
     func makeButtonRound(){
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
         addButton.layer.masksToBounds = true

@@ -25,6 +25,7 @@ class AddContactVC: UIViewController {
     @IBOutlet weak var saveBtn: UIButton!
     
     var list :[ContactData]?
+   
     
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class AddContactVC: UIViewController {
         configureBtnLayout()
         callConfigureTxtFieldLayout()
         hideAllLabels()
-        createDismissKeyboardTapGesture()
+
         delegateToTextFields()
         
     }
@@ -47,10 +48,10 @@ class AddContactVC: UIViewController {
         siteTxt.delegate    = self
         noteTxt.delegate    = self
     }
-    func createDismissKeyboardTapGesture(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
+//    func createDismissKeyboardTapGesture(){
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+//        view.addGestureRecognizer(tap)
+//    }
     
     func validateEmail(_ email: String)->Bool{
         var validador = true
@@ -213,7 +214,7 @@ class AddContactVC: UIViewController {
 }
 
 extension AddContactVC:UITextFieldDelegate{
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextTF = self.view.viewWithTag(textField.tag + 1)as? UITextField{
             nextTF.becomeFirstResponder()
