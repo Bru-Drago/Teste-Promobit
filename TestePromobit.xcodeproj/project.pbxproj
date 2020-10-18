@@ -27,6 +27,7 @@
 		F55D83C825390BA600228D47 /* SucessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D83C725390BA600228D47 /* SucessVC.swift */; };
 		F55D83DE253B1ED300228D47 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D83DD253B1ED100228D47 /* NewUser.swift */; };
 		F55D83F3253C816C00228D47 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D83F2253C816B00228D47 /* FilterVC.swift */; };
+		F55D8409253CADE300228D47 /* ErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55D8408253CADE300228D47 /* ErrorMsg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F55D83C725390BA600228D47 /* SucessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucessVC.swift; sourceTree = "<group>"; };
 		F55D83DD253B1ED100228D47 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		F55D83F2253C816B00228D47 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		F55D8408253CADE300228D47 /* ErrorMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMsg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,13 +159,13 @@
 		F5136B8E25376BDF00CA6168 /* TestePromobit */ = {
 			isa = PBXGroup;
 			children = (
+				F55D8407253CADB500228D47 /* Utilities */,
 				F5136BF4253780D200CA6168 /* Model */,
 				F5136BF3253780BA00CA6168 /* Manager */,
 				F5136BC425376CFA00CA6168 /* Support */,
 				F5136BC325376CE600CA6168 /* Controllers */,
 				F5136BC225376CDD00CA6168 /* View */,
 				F5136B9D25376BEA00CA6168 /* Info.plist */,
-				F5136C1E2538733600CA6168 /* Constants.swift */,
 			);
 			path = TestePromobit;
 			sourceTree = "<group>";
@@ -233,6 +235,15 @@
 				F55D83DD253B1ED100228D47 /* NewUser.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F55D8407253CADB500228D47 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F5136C1E2538733600CA6168 /* Constants.swift */,
+				F55D8408253CADE300228D47 /* ErrorMsg.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +491,7 @@
 				F5136B9425376BDF00CA6168 /* ContactVC.swift in Sources */,
 				F5136B9025376BDF00CA6168 /* AppDelegate.swift in Sources */,
 				F5136B9225376BDF00CA6168 /* SceneDelegate.swift in Sources */,
+				F55D8409253CADE300228D47 /* ErrorMsg.swift in Sources */,
 				F5136C1F2538733700CA6168 /* Constants.swift in Sources */,
 				F55D83DE253B1ED300228D47 /* NewUser.swift in Sources */,
 				F5136BF62537810C00CA6168 /* ServiceManager.swift in Sources */,
@@ -671,7 +683,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.drago.TestePromobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -691,7 +703,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.drago.TestePromobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

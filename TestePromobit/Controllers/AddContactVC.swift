@@ -34,23 +34,35 @@ class AddContactVC: UIViewController {
         configureBtnLayout()
         callConfigureTxtFieldLayout()
         hideAllLabels()
-        
-        print("******************")
-        print(list)
-       
+        createDismissKeyboardTapGesture()
+        delegateToTextFields()
         
     }
+    
+    func delegateToTextFields(){
+        nameTxt.delegate    = self
+        companyTxt.delegate = self
+        emailTxt.delegate   = self
+        phoneTxt.delegate   = self
+        siteTxt.delegate    = self
+        noteTxt.delegate    = self
+    }
+    func createDismissKeyboardTapGesture(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     func validateEmail(_ email: String)->Bool{
-            var validador = true
-            for contact in list! {
-                if(email.uppercased()==contact.userEmail.uppercased()){
-                    validador=false
-                    break
-                }
+        var validador = true
+        for contact in list! {
+            if(email.uppercased()==contact.userEmail.uppercased()){
+                validador=false
+                break
             }
-            return validador
         }
-        
+        return validador
+    }
+    
     
     
     func hideAllLabels(){
@@ -103,7 +115,7 @@ class AddContactVC: UIViewController {
         let site = siteTxt.text!
         let note = noteTxt.text!
         
-        var parameters = [
+        let parameters = [
             "name": name,
             "company": company,
             "email": email,
@@ -119,7 +131,7 @@ class AddContactVC: UIViewController {
                 print("erro no sendPost \(error)")
                 return
             }
-           
+            
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -167,11 +179,11 @@ class AddContactVC: UIViewController {
             noteErroLbl.text = "Preenchimento obrigatório"
             fieldIsNotEmpty = false
         }
-     
+        
         return fieldIsNotEmpty
         
     }
-   
+    
     func cleanData(){
         nameTxt.text    = ""
         companyTxt.text = ""
@@ -181,27 +193,33 @@ class AddContactVC: UIViewController {
         noteTxt.text    = ""
     }
     
-
-@IBAction func cancelBtnTapped(_ sender: UIButton) {
-    cleanData()
-    navigationController?.popToRootViewController(animated: true)
-}
-
-
-@IBAction func saveBtnTapped(_ sender: UIButton) {
     
-    if validateTextfields() {
-        doSendPost()
+    @IBAction func cancelBtnTapped(_ sender: UIButton) {
         cleanData()
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
         
+        if validateTextfields() {
+            doSendPost()
+            cleanData()
+            
+            
+        }
         
     }
-
-    
-    
-    
-    
-    
-   }
 }
 
+extension AddContactVC:UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTF = self.view.viewWithTag(textField.tag + 1)as? UITextField{
+            nextTF.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+}

@@ -49,7 +49,10 @@ class ContactVC : UIViewController {
             vc?.filterInfo = contacts
         }
     }
-
+    
+    func showPlaceholder(_ view: UIView , _ label: UILabel){
+        
+    }
     func makeButtonRound(){
         addButton.layer.cornerRadius = addButton.frame.size.width / 2
         addButton.layer.masksToBounds = true
@@ -64,7 +67,8 @@ class ContactVC : UIViewController {
         ServiceManager.shared.getContacts { (contacts, errorMsg) in
             guard let contacts = contacts else {
                 print("erro na call")
-               self.viewPlaceholder.isHidden = false
+                self.viewPlaceholder.isHidden = false
+                self.msgPlaceholder.text = APIError.invalidResponse.rawValue
                 return
             }
             self.contacts = contacts
@@ -79,7 +83,18 @@ class ContactVC : UIViewController {
 }
 extension ContactVC : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if contacts.count == 0 {
+            self.viewPlaceholder.isHidden = false
+            self.msgPlaceholder.text = APIError.emptyData.rawValue
+            
+        }else {
+            self.viewPlaceholder.isHidden = true
+        }
+        
         return contacts.count
+        
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

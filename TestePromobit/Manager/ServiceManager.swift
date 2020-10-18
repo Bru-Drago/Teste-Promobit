@@ -16,43 +16,55 @@
         
         let postURL = "https://rnlrucrjkb.execute-api.us-east-1.amazonaws.com/default/post2getPromobit"
         
-        typealias APIResponse = ([ContactData]?,String?)->Void
+        typealias APIResponse = ([ContactData]?,APIError?)->Void
         
         func getContacts(completion: @escaping APIResponse) {
             
-            guard let url = URL(string: baseURL)else {return}
+            guard let url = URL(string: baseURL)else {
+                completion(nil,APIError.invalidResponse)
+                return
+                
+            }
             
             AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).validate().response { (responseData) in
                 
                 if let _ = responseData.error {
-                    completion(nil,"Erro encontrado")
+                    completion(nil,APIError.invalidData)
                     return
                 }
-                guard let data = responseData.data else { return}
+                guard let data = responseData.data else {
+                    completion(nil,APIError.emptyData)
+                    return
+                    
+                }
                 do {
                     let contacts = try JSONDecoder().decode([ContactData].self, from: data)
                     print(contacts)
                     completion(contacts,nil)
                     
                 }catch {
-                    completion(nil,"Erro na call")
+                    completion(nil,APIError.invalidData)
                 }
             }
             
         }
         
-        func sendPostRequest(_ parameters :[String:String],completion: (Error?)->Void){
+        
+        func sendPostRequest(_ parameters :[String:String],completion: @escaping (APIError?)->Void){
             
-            guard let url = URL(string: postURL)else { return}
+            guard let url = URL(string: postURL)else {
+                completion(APIError.invalidResponse)
+                return
+                
+            }
             
             AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate(statusCode: 200...300).validate(contentType: ["application/json"])
                 .response { (responseJson) in
                     switch responseJson.result{
                     case .success(let data):
-                        print(data)
-                        debugPrint("esta é a response \(responseJson)")
+                        print("esta é a response \(data)")
                     case .failure:
-                        debugPrint(responseJson)
+                        completion(APIError.invalidData)
                         print(Error.self)
                     }
                     
