@@ -76,7 +76,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meus Contatos" largeTitleDisplayMode="always" id="Qsq-Bu-AXL">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="7F8-KV-tJb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter_list_1_24_px" id="7F8-KV-tJb">
                             <connections>
                                 <segue destination="irC-TB-yRD" kind="show" identifier="goToFilter" id="yk0-rB-lFN"/>
                             </connections>
@@ -423,6 +423,7 @@
     </scenes>
     <resources>
         <image name="check_circle_outline_24_px" width="72" height="72"/>
+        <image name="filter_list_1_24_px" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
