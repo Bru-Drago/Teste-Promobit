@@ -12,5 +12,6 @@ enum APIError : String , Error {
     case emptyData = "Não encontramos nenhum contato."
     case invalidData = "Um erro foi encontrado"
     case emptyField = "Preenchimento obrigatório"
+    case repeatedData = "E-mail já cadastrado."
     
 }

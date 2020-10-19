@@ -48,10 +48,7 @@ class AddContactVC: UIViewController {
         siteTxt.delegate    = self
         noteTxt.delegate    = self
     }
-//    func createDismissKeyboardTapGesture(){
-//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-//        view.addGestureRecognizer(tap)
-//    }
+
     
     func validateEmail(_ email: String)->Bool{
         var validador = true
@@ -92,7 +89,6 @@ class AddContactVC: UIViewController {
     func configureTxtFieldLayout(_ textField: UITextField){
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: textField.frame.height, width: textField.frame.width, height: 2)
-        // bottomLine.backgroundColor = K.CustomColor.blueCustom
         bottomLine.backgroundColor = UIColor.systemGray4.cgColor
         textField.borderStyle = .none
         textField.layer.addSublayer(bottomLine)
@@ -148,36 +144,36 @@ class AddContactVC: UIViewController {
         var fieldIsNotEmpty = true
         if nameTxt.text == nil || nameTxt.text == "" {
             nameErroLbl.alpha = 1
-            nameErroLbl.text = "Preenchimento obrigatório"
+            nameErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         }
         if companyTxt.text == nil || companyTxt.text == ""{
             companyErroLbl.alpha = 1
-            companyErroLbl.text = "Preenchimento obrigatório"
+            companyErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         }
         if emailTxt.text == nil || emailTxt.text == "" {
             emailErroLbl.alpha = 1
-            emailErroLbl.text = "Preenchimento obrigatório"
+            emailErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         } else if (!validateEmail(emailTxt.text!)) {
             emailErroLbl.alpha = 1
-            emailErroLbl.text = "E-mail já cadastrado"
+            emailErroLbl.text = APIError.repeatedData.rawValue
             fieldIsNotEmpty = false
         }
         if phoneTxt.text == nil  || phoneTxt.text == ""{
             phoneErroLbl.alpha = 1
-            phoneErroLbl.text = "Preenchimento obrigatório"
+            phoneErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         }
         if siteTxt.text == nil || siteTxt.text == "" {
             siteErroLbl.alpha = 1
-            siteErroLbl.text = "Preenchimento obrigatório"
+            siteErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         }
         if noteTxt.text == nil || noteTxt.text == ""{
             noteErroLbl.alpha = 1
-            noteErroLbl.text = "Preenchimento obrigatório"
+            noteErroLbl.text = APIError.emptyField.rawValue
             fieldIsNotEmpty = false
         }
         
