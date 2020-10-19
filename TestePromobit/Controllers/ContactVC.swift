@@ -11,6 +11,7 @@ import SDWebImage
 
 class ContactVC : UIViewController {
     
+    @IBOutlet weak var filterBtn: UIBarButtonItem!
     @IBOutlet weak var viewPlaceholder: UIView!
     @IBOutlet weak var imgPlaceholder: UIImageView!
     @IBOutlet weak var msgPlaceholder: UILabel!
@@ -86,9 +87,11 @@ extension ContactVC : UITableViewDataSource , UITableViewDelegate {
         if contacts.count == 0 {
             self.viewPlaceholder.isHidden = false
             self.msgPlaceholder.text = APIError.emptyData.rawValue
+            self.filterBtn.isEnabled = false
             
         }else {
             self.viewPlaceholder.isHidden = true
+            self.filterBtn.isEnabled = true
         }
         
         return contacts.count

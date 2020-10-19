@@ -108,6 +108,7 @@
                     <connections>
                         <outlet property="addButton" destination="qWQ-C3-YKh" id="pod-CO-fAU"/>
                         <outlet property="contactTableView" destination="UUX-s5-lB1" id="Idk-dd-KA1"/>
+                        <outlet property="filterBtn" destination="7F8-KV-tJb" id="2CY-eZ-gdK"/>
                         <outlet property="imgPlaceholder" destination="HxQ-fv-n86" id="PRq-Zi-L8g"/>
                         <outlet property="msgPlaceholder" destination="FJr-0W-eWG" id="2x3-WU-aaa"/>
                         <outlet property="viewPlaceholder" destination="Jkb-6U-W5J" id="eub-KT-310"/>
